@@ -40,20 +40,21 @@ Simple blog app made in Rails that will show the list of posts and empower reade
   <summary>Client</summary>
   <ul>
     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 
@@ -61,9 +62,7 @@ Simple blog app made in Rails that will show the list of posts and empower reade
 
 ### Key Features <a name="key-features"></a>
 
-- Add comment
-- Create User
-- Add Like
+- Create data model migrations
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,7 +100,13 @@ git clone https://github.com/sebalp100/blog-app
 
 To run the project, execute the following commands in your Ruby terminal:
 
-- Open your terminal and run `irb` on the root folder of the project
+`bundle install` to install all gems used.
+
+`rails db:create` to create the database.
+
+`rails db:migrate` to run the database migrations you created.
+
+`rails s` to run the dev server.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +125,23 @@ To run the project, execute the following commands in your Ruby terminal:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Improve optimization
+- Project 4: Processing data in models.
+
+- Project 5: Views.
+
+- Project 6: Forms
+
+- Project 7: Validations, Model specs, and n+1 problems.
+
+- Project 8: Add Devise.
+
+- Project 9: Add authorization rules.
+
+- Project 10: Integration specs for Views.
+
+- Project 11: Add API endpoints.
+
+- Exercise: API documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
