@@ -1,12 +1,12 @@
 class Post < ApplicationRecord
-  belongs_to :user
+  belongs_to :author, class_name: 'User'
   has_many :comments
   has_many :likes
 
   after_save :posts_counter
 
   def posts_counter
-    user.update(post_counter: user.posts.count)
+    author.update(post_counter: author.posts.count)
   end
 
   def recent_comments
