@@ -4,10 +4,10 @@ RSpec.describe Like, type: :model do
   let!(:user) { FactoryBot.create(:user) }
   let!(:post) { FactoryBot.create(:post, author: user) }
 
-  subject { described_class.new(author: user, post: post) }
+  subject { described_class.new(author: user, post:) }
 
   it 'increments the post likes counter when created' do
-    expect{ subject.save }.to change{ post.likes_counter }.by(1)
+    expect { subject.save }.to change { post.likes_counter }.by(1)
   end
 
   describe 'associations' do

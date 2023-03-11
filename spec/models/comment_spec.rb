@@ -4,10 +4,10 @@ RSpec.describe Comment, type: :model do
   let(:user) { FactoryBot.create(:user) }
   let(:post) { FactoryBot.create(:post, author: user) }
 
-  subject { Comment.new(author: user, post: post) }
+  subject { Comment.new(author: user, post:) }
 
   it 'increments the comments counter when created' do
-    expect{ subject.save }.to change{ post.comments_counter }.by(1)
+    expect { subject.save }.to change { post.comments_counter }.by(1)
   end
 
   describe 'associations' do
