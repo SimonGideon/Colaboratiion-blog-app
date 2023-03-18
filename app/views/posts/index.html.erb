@@ -1,1 +1,22 @@
-<h1>Here is a list of posts</h1>
+<h1><%= @user.name %></h1>
+
+<img src="<%= @user.photo %>" alt="User photo">
+
+<p>Number of post <%= @user.post_counter %></p>
+
+<% @user.posts.each do |post| %>
+  <%= link_to post.title, user_post_path(@user, post) %>
+  <p><%= post.text %></p>
+  <p>Comments: <%= post.comments_counter %></p>
+  <p>Likes: <%= post.likes_counter %></p>
+
+  <hr>
+  
+  <% post.comments.each do |comment| %>
+    <p><%= @user.name %>: <%= comment.text %></p>
+  <% end %>
+  
+  <hr>
+<% end %>
+
+<button>Pagination</button>

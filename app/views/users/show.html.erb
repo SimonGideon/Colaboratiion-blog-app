@@ -1,1 +1,16 @@
-<h1>Here is a specific user</h1>
+<h1><%= @user.name %></h1>
+
+<img src="<%= @user.photo %>" alt="User photo">
+
+<p><%= @user.bio %></p>
+<p>Number of post <%= @user.post_counter %></p>
+
+<% @user.posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  <p><%= post.text %></p>
+  <p>Comments: <%= post.comments_counter %></p>
+  <p>Likes: <%= post.likes_counter %></p>
+  <hr>
+<% end %>
+
+<button><%= link_to "See all posts", user_posts_path(@user) %></button>

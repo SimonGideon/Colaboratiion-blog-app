@@ -1,1 +1,9 @@
-<h1>Here is a list of posts for a specific user</h1>
+<h2><%= @post.title %> by <%= @user.name %> Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></h2>
+
+<p><%= @post.text %></p>
+  
+<hr>
+  
+<% @post.comments.each do |comment| %>
+  <p><%= @user.name %>: <%= comment.text %></p>
+<% end %>

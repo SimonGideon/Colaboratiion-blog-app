@@ -1,0 +1,40 @@
+.user-main {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  width: 90%;
+  gap: 10%;
+  justify-content: flex-start;
+}
+
+.user-main a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-bio {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.user-photo {
+  width: 85px;
+}
+
+.user-container {
+  display: flex;
+  border: 1px solid black;
+  width: 90%;
+  padding: 20px 3%;
+  justify-content: space-around;
+}
+
+.post-counter {
+  font-size: 14px;
+  padding-top: 30px;
+}
