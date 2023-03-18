@@ -16,7 +16,7 @@
 <% @user.posts.each_with_index do |post, index| %>
   <div class='post-info'>
   <h3>Post #<%= index + 1 %></h3>
-  <p><%= post.text %></p>
+  <p><%= truncate(post.text, length: 100, separator: '...') %></p>
   <div class='counters'>
   <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
   </div>
