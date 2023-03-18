@@ -1,1 +1,28 @@
-<h1>Here is a specific user</h1>
+<div class='user-main'>
+<img class='user-photo' src="<%= @user.photo %>" alt="User photo">
+
+<div class='user-container'>
+<h1><%= @user.name %></h1>
+<p class='post-counter'>Number of posts: <%=@user.post_counter%></p>
+</div>
+</div>
+
+<div class='user-id-container'>
+<div class='bio'>
+<h2>Bio</h2>
+<p><%= @user.bio %></p>
+</div>
+
+<% @user.posts.each_with_index do |post, index| %>
+  <div class='post-info'>
+  <h3>Post #<%= index + 1 %></h3>
+  <p><%= truncate(post.text, length: 100, separator: '...') %></p>
+  <div class='counters'>
+  <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+  </div>
+  </div>
+<% end %>
+
+</div>
+
+<button class='post-button'><%= link_to "See all posts", user_posts_path(@user) %></button>
