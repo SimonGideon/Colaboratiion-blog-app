@@ -1,22 +1,28 @@
+<div class='user-main'>
+<img class='user-photo' src="<%= @user.photo %>" alt="User photo">
+
+<div class='user-container'>
 <h1><%= @user.name %></h1>
+<p class='post-counter'>Number of posts: <%=@user.post_counter%></p>
+</div>
+</div>
 
-<img src="<%= @user.photo %>" alt="User photo">
-
-<p>Number of post <%= @user.post_counter %></p>
-
-<% @user.posts.each do |post| %>
-  <%= link_to post.title, user_post_path(@user, post) %>
+<div class='post-comments'>
+<% @user.posts.each_with_index do |post, index| %>
+  <div class='post-intro'>
+  <h3><%= link_to "Post ##{index + 1}", user_post_path(@user, post, post_number: index + 1) %></h3>
   <p><%= post.text %></p>
-  <p>Comments: <%= post.comments_counter %></p>
-  <p>Likes: <%= post.likes_counter %></p>
-
-  <hr>
+  <div class='counters'>
+  <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+  </div>
+  </div>
   
+  <div class='comments'>
   <% post.comments.each do |comment| %>
     <p><%= @user.name %>: <%= comment.text %></p>
   <% end %>
-  
-  <hr>
+  </div>
 <% end %>
+</div>
 
 <button>Pagination</button>

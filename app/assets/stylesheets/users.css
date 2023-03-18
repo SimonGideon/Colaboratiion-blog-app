@@ -7,8 +7,9 @@
   justify-content: flex-start;
 }
 
-.user-main a {
+a {
   text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -37,4 +38,45 @@ ul {
 .post-counter {
   font-size: 14px;
   padding-top: 30px;
+}
+
+.user-id-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.bio {
+  padding: 20px;
+  border: 2px solid black;
+  margin-bottom: 30px;
+}
+
+.bio h2 {
+  padding-bottom: 20px;
+  font-size: 14px;
+}
+
+.counters {
+  display: flex;
+  font-size: 14px;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.post-info {
+  border: 2px solid black;
+  margin-bottom: 15px;
+}
+
+.post-info h3 {
+  margin-bottom: 20px;
+}
+
+.post-button {
+  width: 100px;
+  justify-self: center;
+  background-color: white;
+  border: 2px solid black;
+  padding: 3px 5px;
 }

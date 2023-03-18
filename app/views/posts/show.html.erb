@@ -1,9 +1,13 @@
-<h2><%= @post.title %> by <%= @user.name %> Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></h2>
+<div class= 'post-container'>
+<div class='post-detail'>
+<div class='title'><h2>Post #<%= @post_number %> by <%= @user.name %></h2> <div class='counters'>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></div></div>
 
 <p><%= @post.text %></p>
-  
-<hr>
-  
+</div>
+
+<div class='comments'>
 <% @post.comments.each do |comment| %>
   <p><%= @user.name %>: <%= comment.text %></p>
 <% end %>
+</div>
+</div>

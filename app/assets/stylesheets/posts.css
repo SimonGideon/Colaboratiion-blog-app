@@ -1,0 +1,56 @@
+.post-comments {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-intro,
+.comments {
+  display: flex;
+  width: 90%;
+  border: 2px solid black;
+  flex-direction: column;
+}
+
+.post-intro {
+  margin-bottom: 1px;
+}
+
+.post-intro h3 {
+  margin-bottom: 20px;
+}
+
+.comments {
+  margin-bottom: 20px;
+  min-height: 30px;
+  padding: 4px;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.post-detail {
+  display: flex;
+  border: 2px solid black;
+  width: 90%;
+  padding: 4px;
+  flex-direction: column;
+  margin-bottom: 1px;
+}
+
+.title {
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title h2 {
+  font-size: 16px;
+}
