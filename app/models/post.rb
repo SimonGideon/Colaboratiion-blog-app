@@ -17,4 +17,13 @@ class Post < ApplicationRecord
   def recent_comments
     comments.order(created_at: :desc).limit(5)
   end
+
+  before_validation :set_default_counters
+
+  private
+
+  def set_default_counters
+    self.comments_counter ||= 0
+    self.likes_counter ||= 0
+  end
 end

@@ -10,4 +10,8 @@
   <p><%= @user.name %>: <%= comment.text %></p>
 <% end %>
 </div>
+
+<%= form_with url: likes_user_post_path(@user, @post), method: :post do |form| %>
+  <%= form.submit "Like" %>
+<% end %>
 </div>

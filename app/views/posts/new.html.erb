@@ -1,0 +1,10 @@
+<%= form_with model: [@user, @post], url: user_posts_path(@user), data: { turbo: false } do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :text %>
+  <%= form.text_area :text %>
+
+  <%= form.submit "Create Post" %>
+<% end %>
+
