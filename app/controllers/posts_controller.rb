@@ -23,31 +23,31 @@ class PostsController < ApplicationController
   def likes
     @post = Post.find(params[:id])
     if @post.likes.create(author_id: current_user.id)
-      flash[:success] = "You liked the post."
+      flash[:success] = 'You liked the post.'
     else
-      flash[:error] = "Failed to like the post."
+      flash[:error] = 'Failed to like the post.'
     end
     redirect_to user_posts_path
   end
 
   def create
-    puts "create method is being executed"
-  puts "post_params: #{post_params}"
-  
-  @post = current_user.posts.new(post_params)
+    puts 'create method is being executed'
+    puts "post_params: #{post_params}"
 
-  if @post.save
-    puts "post was saved successfully"
-    redirect_to root_path, notice: 'Post was successfully created.'
-  else
-    puts "post was not saved successfully"
-    p @post.errors
-    render :new
+    @post = current_user.posts.new(post_params)
+
+    if @post.save
+      puts 'post was saved successfully'
+      redirect_to root_path, notice: 'Post was successfully created.'
+    else
+      puts 'post was not saved successfully'
+      p @post.errors
+      render :new
+    end
   end
-  end
-  
+
   private
-  
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
