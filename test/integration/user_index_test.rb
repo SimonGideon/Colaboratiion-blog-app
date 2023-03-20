@@ -4,8 +4,8 @@ RSpec.describe 'User index page', type: :feature do
   it 'displays usernames, profile pictures, and post count for each user' do
     first_user = User.create(name: 'Jose', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', post_counter: 0,
                              bio: 'Teacher from Mexico.')
-    second_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-                              likes_counter: 0)
+    Post.create(author: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
+                likes_counter: 0)
 
     visit '/users'
     expect(page).to have_content(first_user.name)
