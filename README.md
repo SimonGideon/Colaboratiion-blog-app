@@ -119,19 +119,23 @@ To run the project, execute the following commands in your Ruby terminal:
 - GitHub: [@sebalp100](https://github.com/sebalp100)
 - LinkedIn: [Sebastian Martin](https://www.linkedin.com/in/sebastian-martin-956b2724a/)
 
+👤 **Amen Tetteh**
+
+- GitHub: [@amentetteh](https://github.com/amentetteh)
+- LinkedIn: [Amen Tetteh](https://www.linkedin.com/in/amentetteh/)
+
+👤 **Simon Gideon**
+
+- GitHub: [@SimonGideon](https://github.com/SimonGideon)
+- LinkedIn: [Simon Gideon](https://linkedin.com/in/mnayi-gideon)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Project 4: Processing data in models.
-
-- Project 5: Views.
-
-- Project 6: Forms
-
-- Project 7: Validations, Model specs, and n+1 problems.
 
 - Project 8: Add Devise.
 
