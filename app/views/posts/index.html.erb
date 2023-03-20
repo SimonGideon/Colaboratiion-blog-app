@@ -8,7 +8,7 @@
 </div>
 
 <div class='post-comments'>
-<% @user.posts.each_with_index do |post, index| %>
+<% @user.posts.includes(:author).each_with_index do |post, index| %>
   <div class='post-intro'>
   <h3><%= link_to "Post ##{index + 1}", user_post_path(@user, post, post_number: index + 1) %></h3>
   <p><%= truncate(post.text, length: 100, separator: '...') %></p>
@@ -18,7 +18,7 @@
   </div>
   
   <div class='comments'>
-  <% post.comments.each do |comment| %>
+  <% post.comments.includes(:author).each do |comment| %>
     <p><%= comment.author.name %>: <%= comment.text %></p>
   <% end %>
   </div>

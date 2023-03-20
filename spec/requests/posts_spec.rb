@@ -11,7 +11,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template('index')
     end
     it 'includes the correct placeholder text' do
-      expect(response.body).to include('Here is a list of posts')
+      expect(response.body).to include(user.name)
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'displays the user information' do
-      expect(response.body).to include('Here is a list of posts for a specific user')
+      expect(response.body).to include(post.text)
     end
   end
 end
