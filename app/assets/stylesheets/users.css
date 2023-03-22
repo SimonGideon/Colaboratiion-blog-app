@@ -80,3 +80,18 @@ ul {
   border: 2px solid black;
   padding: 3px 5px;
 }
+
+.new_user,
+.field {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  gap: 10px;
+}
+
+.field input {
+  border: 2px solid black;
+  width: 100%;
+  padding: 2px;
+}
