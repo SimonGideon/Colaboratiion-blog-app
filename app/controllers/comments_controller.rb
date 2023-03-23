@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   def new
     @post = Post.find(params[:post_id])
     @comment = Comment.new
@@ -20,6 +21,14 @@ class CommentsController < ApplicationController
       redirect_to user_posts_path, notice: 'Comment was successfully created.'
     else
       render :new
+    end
+
+    def destroy
+      @comment.destroy
+      @comment.update(comments_counter: @post.comments_counter - 1)
+      respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Comment was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

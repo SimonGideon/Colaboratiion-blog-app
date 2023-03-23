@@ -8,6 +8,12 @@
 <div class='comments'>
 <% @post.comments.each do |comment| %>
   <p><%= comment.user.name %>: <%= comment.text %></p>
+  <% if comment.user == current_user || @post.author == current_user %>
+  <%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
+    <%= form.submit "Delete" %>
+  <% end %>
+<% end %>
+<% end %>
 <% end %>
 </div>
 
