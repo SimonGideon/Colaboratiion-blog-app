@@ -7,11 +7,15 @@
 
 <div class='comments'>
 <% @post.comments.each do |comment| %>
-  <p><%= @user.name %>: <%= comment.text %></p>
+  <p><%= comment.user.name %>: <%= comment.text %></p>
 <% end %>
 </div>
 
 <%= form_with url: likes_user_post_path(@user, @post), method: :post do |form| %>
   <%= form.submit "Like" %>
+<% end %>
+
+<%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
+  <%= form.submit "Delete" %>
 <% end %>
 </div>
