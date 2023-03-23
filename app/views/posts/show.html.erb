@@ -15,7 +15,9 @@
   <%= form.submit "Like" %>
 <% end %>
 
-<%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
-  <%= form.submit "Delete" %>
+<% if @post.author == current_user %>
+  <%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
+    <%= form.submit "Delete" %>
+  <% end %>
 <% end %>
 </div>

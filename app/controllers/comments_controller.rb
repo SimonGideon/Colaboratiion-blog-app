@@ -5,6 +5,13 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
+
+    if @user.id != current_user.id
+    flash[:alert] = "You cannot create comments for another user."
+    redirect_to root_path and return
+    end
+
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.author = current_user
