@@ -9,7 +9,7 @@
 .comments {
   display: flex;
   width: 90%;
-  border: 2px solid black;
+  border: 2px solid #1f1f1f;
   flex-direction: column;
 }
 
@@ -37,7 +37,7 @@
 
 .post-detail {
   display: flex;
-  border: 2px solid black;
+  border: 2px solid #1f1f1f;
   width: 90%;
   padding: 4px;
   flex-direction: column;
@@ -52,5 +52,5 @@
 }
 
 .title h2 {
-  font-size: 16px;
+  font-size: 1rem;
 }
