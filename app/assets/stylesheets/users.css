@@ -9,7 +9,7 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: #1f1f1f;
 }
 
 ul {
@@ -29,7 +29,7 @@ ul {
 
 .user-container {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #1f1f1f;
   width: 90%;
   padding: 20px 3%;
   justify-content: space-around;
@@ -48,7 +48,7 @@ ul {
 
 .bio {
   padding: 20px;
-  border: 2px solid black;
+  border: 2px solid #1f1f1f;
   margin-bottom: 30px;
 }
 
@@ -65,7 +65,7 @@ ul {
 }
 
 .post-info {
-  border: 2px solid black;
+  border: 2px solid #1f1f1f;
   margin-bottom: 15px;
 }
 
@@ -76,8 +76,8 @@ ul {
 .post-button {
   width: 100px;
   justify-self: center;
-  background-color: white;
-  border: 2px solid black;
+  background-color: #ffffff;
+  border: 2px solid #1f1f1f;
   padding: 3px 5px;
 }
 
@@ -91,7 +91,7 @@ ul {
 }
 
 .field input {
-  border: 2px solid black;
+  border: 2px solid #1f1f1f;
   width: 100%;
   padding: 2px;
 }
