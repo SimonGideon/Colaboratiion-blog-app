@@ -15,12 +15,10 @@ Rails.application.routes.draw do
         resources :posts, only: [:index]
       end
       resources :posts, only: [] do
-        resources :comments, only: [:index]
+        resources :comments, only: [:index, :create]
       end
     end
   end
-
-  # http://[::1]:3000/api/v1/users/1/posts 
-  # http://[::1]:3000/api/v1/posts/21/comments
+  
   root "users#index"
 end
