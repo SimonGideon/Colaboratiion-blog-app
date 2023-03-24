@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       member do
         post 'likes' => 'posts#likes', as: :likes
       end
-      resources :comments, only: [:create, :new]
+      resources :comments, only: [:create, :new, :destroy, :index]
     end
   end
   root "users#index"
