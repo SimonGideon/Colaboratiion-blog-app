@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -31,10 +33,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    puts 'create method is being executed'
-    puts "post_params: #{post_params}"
+    @user = User.find(params[:user_id])
 
-    @post = current_user.posts.new(post_params)
+    if @user.id != current_user.id
+      flash[:alert] = 'You cannot create posts for another user.'
+      redirect_to root_path and return
+    end
+
+    @post = current_user.posts.build(post_params)
+    @post.author_id = current_user.id
 
     if @post.save
       puts 'post was saved successfully'
@@ -43,6 +50,22 @@ class PostsController < ApplicationController
       puts 'post was not saved successfully'
       p @post.errors
       render :new
+    end
+  end
+
+  def comments
+    @post = Post.find(params[:id])
+    @comments = @post.comments
+  end
+
+  def destroy
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    @post.destroy
+    @user.update(post_counter: @user.post_counter - 1)
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

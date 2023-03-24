@@ -6,12 +6,28 @@
 </div>
 
 <div class='comments'>
-<% @post.comments.each do |comment| %>
-  <p><%= @user.name %>: <%= comment.text %></p>
-<% end %>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.author.name %>: <%= comment.text %></p>
+    <% if comment.author == current_user || @post.author == current_user %>
+      <%= form_for([@user, @post, comment], method: :delete) do |f| %>
+        <%= f.submit 'Delete' %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
 
 <%= form_with url: likes_user_post_path(@user, @post), method: :post do |form| %>
   <%= form.submit "Like" %>
 <% end %>
+
+<% if @post.author == current_user %>
+  <%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
+    <%= form.submit "Delete" %>
+  <% end %>
+<% end %>
 </div>
+
+
+
+
+
