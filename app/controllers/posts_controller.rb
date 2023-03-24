@@ -36,8 +36,8 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
 
     if @user.id != current_user.id
-    flash[:alert] = "You cannot create posts for another user."
-    redirect_to root_path and return
+      flash[:alert] = 'You cannot create posts for another user.'
+      redirect_to root_path and return
     end
 
     @post = current_user.posts.build(post_params)
