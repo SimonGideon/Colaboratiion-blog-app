@@ -53,14 +53,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def comments
+    @post = Post.find(params[:id])
+    @comments = @post.comments
+  end
+
   def destroy
     @post.likes.destroy_all
+    @post.comments.destroy_all
     @post.destroy
     @user.update(post_counter: @user.post_counter - 1)
     respond_to do |format|
-    format.html { redirect_to root_path, notice: 'Post was successfully destroyed.' }
-    format.json { head :no_content }
-  end
+      format.html { redirect_to root_path, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
